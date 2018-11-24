@@ -1,0 +1,38 @@
+.container {
+padding: 10pt;
+}
+
+body {
+    background-image: url("circuit-copy.png");
+}
+
+.jumbotron {
+    background-color: white;
+    border: 3pt solid black;
+    text-shadow: 2px 2px 5px rgb(0, 119, 255);
+}
+
+#title {
+    font-size: 50px;
+}
+
+.card-title {
+    text-align: center;
+    border: 3pt double rgb(145, 142, 142);
+}
+
+.card {
+    border: 1pt solid rgb(145, 142, 142);
+}
+
+button {
+cursor: pointer;
+border-radius: 5px;
+-webkit-transition-duration: 0.4s; 
+transition-duration: 0.4s;
+}
+
+
+button:hover {
+   background-color: #e7e7e7;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>W3JavaScript</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <!-- HTML code -->
+    <section class="container container-fluid">
+        <div class="jumbotron text-center">
+            <h2 id="title">This is my Learning space</h2>
+        </div>
+    </section>
+
+    <section class="container container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-title">JS basic #1</div>
+                    <div class="card-body">
+                        <p>Today is: <span id="dayToday"></span></p>
+                        <p>Current time is: <span id="timeNow"></span> </p>
+                        <button id="theButton">Click for Answers</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-title">JS basic #2</div>
+                    <div class="card-body">
+                        <p>Next <span></span></p>
+                        <p>Next <span></span> </p>
+                        <button>New Button</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-title">JS basic #2</div>
+                    <div class="card-body">
+                        <p>Next <span></span></p>
+                        <p>Next <span></span> </p>
+                        <button>New Button</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script type="text/javascript">  // begin js code
+
+        var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+        var newP = $("<p></p>");
+
+        function dayTime() {
+            var d = new Date();
+            var n = d.getDay()
+            var y = d.getHours() + " : " + d.getMinutes() + " : " + d.getSeconds();
+            document.getElementById("dayToday").innerHTML = daysOfWeek[n];
+            document.getElementById("timeNow").innerHTML = y;
+        };
+
+        $("#theButton").on("click", function () {
+            dayTime();
+        });
+
+    </script>
+
+</body>
+
+</html>
