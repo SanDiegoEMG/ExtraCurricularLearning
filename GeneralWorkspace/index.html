@@ -142,7 +142,7 @@
 
             <div class="col-lg-3">
                 <div class="card">
-                    <div class="card-title">Fun with the RESTful Countries API</div>
+                    <div class="card-title">Fun with the RESTCountries API</div>
                     <div class="card-body">
                         <form>
                             <div class="form-group">
@@ -338,8 +338,10 @@
                 var commas = ctryPop.toLocaleString();
                 var pTwo = $("<p>.").text("Population: " + commas);
                 var region = response[0].subregion;
-                var pThree = $("<p>").text("Country is in: " + region);
-                $("#country-facts").append(displayDiv, pOne, pTwo, pThree);
+                var pThree = $("<p>").text("World region: " + region);
+                var flagURL = response[0].flag;
+                var flag = $("<img height='95px' width='141px'>").attr("src", flagURL).attr("id", "border-box");
+                $("#country-facts").append(displayDiv, pOne, pTwo, pThree, flag);
             });
         });
 

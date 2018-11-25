@@ -61,3 +61,7 @@ button:hover {
     text-align: center;
     margin: 0 5pt 0 5pt;
   }
+
+  #border-box {
+      border: 2pt double rgb(155, 152, 152);
+  }
