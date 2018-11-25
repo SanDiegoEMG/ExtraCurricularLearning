@@ -131,7 +131,8 @@
                                 <p id="person-num" class="text-center"></p>
                             </div>
                         </div>
-                        <p id="show-result" class="small-type text-center"> Click button and then type  a number between 1-9</p>
+                        <p id="show-result" class="small-type text-center"> Click button and then type a number between
+                            1-9</p>
                         <div class="row">
                             <button class="btn-block btn-outline-dark" id="match">Play Game</button>
                         </div>
@@ -141,10 +142,16 @@
 
             <div class="col-lg-3">
                 <div class="card">
-                    <div class="card-title">JS basic</div>
+                    <div class="card-title">Fun with the RESTful Countries API</div>
                     <div class="card-body">
-                        <p>TBD</p>
-                        <p class="small-type">TBD</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="country-name">Type Country Name here</label>
+                                <input type="text" class="form-control-sm small-type" id="country-name">
+                                <button id="country-api-button">Get Facts</button>
+                                <div id="country-facts"></div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -307,6 +314,37 @@
                 }
             }
         });
+
+        // End exercise #8
+
+
+        //  Begin API RESTful countries exploration
+        var queryURL = "https://restcountries.eu/rest/v2/name/";
+
+
+        $("#country-api-button").on("click", function (event) {
+            event.preventDefault();
+            var ctryName = $("#country-name").val().trim();
+            $.ajax({
+                url: (queryURL + ctryName),
+                Method: "GET"
+            }).then(function (response) {
+                console.log(response);
+                $("#country-facts").empty();
+                var ctryCapital = response[0].capital;
+                var displayDiv = $("<div class='country-info'></div>");
+                var pOne = $("<p>").text("Capital City: " + ctryCapital);
+                var ctryPop = response[0].population;
+                var commas = ctryPop.toLocaleString();
+                var pTwo = $("<p>.").text("Population: " + commas);
+                var region = response[0].subregion;
+                var pThree = $("<p>").text("Country is in: " + region);
+                $("#country-facts").append(displayDiv, pOne, pTwo, pThree);
+            });
+        });
+
+
+
 
 
 
