@@ -24,45 +24,148 @@
 
     <section class="container container-fluid">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="card">
                     <div class="card-title">JS basic #1</div>
                     <div class="card-body">
                         <p>Today is: <span id="dayToday"></span></p>
                         <p>Current time is: <span id="timeNow"></span> </p>
-                        <button id="theButton">Click for Answers</button>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <button id="theButton">Click for Answers</button></div>
+                            <div class="col-lg-6">
+                                <button id="resetButton">Click to Reset</button></div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="card">
                     <div class="card-title">JS basic #2</div>
                     <div class="card-body">
-                        <p>Next <span></span></p>
-                        <p>Next <span></span> </p>
-                        <button>New Button</button>
+                        <p>Wondering if the Window is the doc, the html, or the card?<span></span> </p>
+                        <p class="small-type"> Answer = whole area...no background img </p>
+                        <button id="print">Print Window</button>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="card">
-                    <div class="card-title">JS basic #2</div>
+                    <div class="card-title">JS basic #3</div>
                     <div class="card-body">
-                        <p>Next <span></span></p>
-                        <p>Next <span></span> </p>
-                        <button>New Button</button>
+                        <p>Working with Date() method</p>
+                        <p class="small-type">Must first call Date() and assign it a variable...then the others are
+                            variable.method()</p>
+                        <button id="dateButton">Show Date</button>
+                        <h6 id="showdatehere"></h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-title">JS basic #4</div>
+                    <div class="card-body">
+                        <form id="myform">
+                            <img src="copy-3-bw-triangles.gif" class="card-img-top" alt="outline of 3 triangles" width="200"
+                                height="100" id="triangles">
+                            <div class="form-group">
+                                <label for="num1" class="small-type">First #</label>
+                                <input type="number" class="form-control-sm small-type" id="num1">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="num2" class="small-type">Second #</label>
+                                <input type="number" class="form-control-sm small-type" id="num2">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="num3" class="small-type">Third #</label>
+                                <input type="number" class="form-control-sm small-type" id="num3">
+                            </div>
+
+                            <button id="triangle">Calculate Area</button>
+                            <button id="reset-triangle">Reset</button>
+                        </form>
+                        <div class="row text-center">
+                            <p id="showarea"> The area of your triangle is: </p>
+                            <div id="here"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <section class="row">
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-title">JS basic #5 </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="word" class="small-type">Enter a Word</label>
+                                <input type="string" class="form-control-sm small-type" id="word">
+                                <button id="get-letters" class="small-type">Click to begin</button>
+                                <h6 id="word-here"> TBD </h6>
+                                <button id="rearrange" class="small-type"> Rearrange!</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-title">JS basic #8</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p class="small-type text-center">Computer Guess</p>
+                                <p id="comp-num" class="text-center"></p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="small-type text-center">Your Guess</p>
+                                <p id="person-num" class="text-center"></p>
+                            </div>
+                        </div>
+                        <p id="show-result" class="small-type text-center"> Click button and then type  a number between 1-9</p>
+                        <div class="row">
+                            <button class="btn-block btn-outline-dark" id="match">Play Game</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-title">JS basic</div>
+                    <div class="card-body">
+                        <p>TBD</p>
+                        <p class="small-type">TBD</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-title">JS basic</div>
+                    <div class="card-body">
+                        <p>TBD</p>
+                        <p class="small-type">TBD</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
 
 
 
     <script type="text/javascript">  // begin js code
 
+        //  Exercise #1  W3 js basics
         var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
         var newP = $("<p></p>");
@@ -75,9 +178,137 @@
             document.getElementById("timeNow").innerHTML = y;
         };
 
+        function reset() {
+            $("#dayToday").empty();
+            $("#timeNow").empty();
+        }
+
         $("#theButton").on("click", function () {
             dayTime();
         });
+
+        $("#resetButton").on("click", function () {
+            reset();
+        });
+        // End exercise #1
+
+
+        //  Exercise #2 W3 js basics
+        function printThis() {
+            window.print();
+        }
+
+        $("#print").on("click", function () {
+            printThis();
+        });
+        // End exercise #2
+
+        // Begin exercise #3
+        var d = new Date();
+        console.log(d);
+        yr = d.getFullYear();
+        console.log(yr);
+        var mth = d.getMonth()
+        console.log(mth);
+        var date = d.getDate()
+        console.log(date);
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        var mthName = months[10];
+        console.log(mthName);
+
+        $("#dateButton").on("click", function () {
+            var compDate = $("#showdatehere").text(mthName + " " + date + ", " + yr);
+        });
+        // End exercise #3
+
+        // Begin Exercise #4
+        $("#triangle").on("click", function (event) {
+            event.preventDefault();
+            var input1 = $("#num1").val().trim();
+            var input2 = $("#num2").val().trim();
+            var input3 = $("#num3").val().trim();
+            console.log("Inputs = " + input1, input2, input3);
+            var doMath = findArea(input1, input2, input3);
+            console.log(doMath.toFixed(2));
+            $("#here").text(doMath.toFixed(2));
+        });
+
+        function findArea(x, y, z) {
+            var perimeter = (Number(x) + Number(y) + Number(z)) / 2;
+            console.log("Perimeter = " + perimeter);
+            var sqRoot = (Math.sqrt(perimeter * ((perimeter - x) * (perimeter - y) * (perimeter - z))));
+            if (isNaN(sqRoot) || sqRoot === 0) {
+                $("#here").text("Not a valid triangle");
+            }
+            else return (Math.sqrt(perimeter * ((perimeter - x) * (perimeter - y) * (perimeter - z))));
+        };
+
+        function resetform() {
+            document.getElementById("myform").reset();
+        }
+
+        $("#reset-triangle").on("click", function (event) {
+            resetForm();
+            $("#here").empty();
+        });
+        //End exercise #4 
+
+        //Begin exercise #5 
+        var letterArr = [];
+        $("#get-letters").on("click", function (event) {
+            event.preventDefault();
+            var word = $("#word").val().trim();
+            console.log(word);
+            document.getElementById("word-here").innerHTML = (word);
+            letterArr = [];
+
+            for (var i = 0; i < word.length; i++) {
+                letterArr.push(word.charAt(i));
+                console.log(letterArr)
+            }
+        });
+
+        $("#rearrange").on("click", function (event) {
+            event.preventDefault();
+            console.log("clicked!")
+            var letter = letterArr.shift();
+            letterArr.push(letter);
+            console.log(letterArr);
+            document.getElementById("word-here").innerHTML = (letterArr.join(""));
+        });
+        //  End Exercise #5
+
+
+        //  Begin exercise #8
+        function compNumGenerate() {
+            return Math.floor(Math.random() * 9) + 1;  // min and max included
+        }
+
+        $("#match").on("click", function (event) {
+            event.preventDefault();
+            $("#comp-num").text("?");
+            $("#person-num").text("?");
+            var compNum = compNumGenerate();
+            console.log(compNum);
+
+            document.onkeyup = function (event) {
+                var userGuess = event.key;
+                $("#match").text("Play Again");
+                if (userGuess >= 1 && userGuess <= 9) {
+                    $("#person-num").text(userGuess);
+                    $("#comp-num").text(compNum);
+                    if (userGuess == compNum) {
+                        $("#person-num").append("<p> 'WooHoo! You guessed correctly! Maybe play the lottery...'</p>");
+                    } else {
+                        $("#person-num").append("<p>'Not your lucky day.'</p>");
+                    }
+                } else {
+                    $("#person-num").text("Not a valid choice. Choose a number 1-9.");
+                }
+            }
+        });
+
+
 
     </script>
 
