@@ -65,3 +65,7 @@ button:hover {
   #border-box {
       border: 2pt double rgb(155, 152, 152);
   }
+
+  .row {
+    margin: 10pt 0 10pt 0;
+  }

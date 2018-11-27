@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
         crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <title>W3JavaScript</title>
+    <title>Playing to Learn</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -158,10 +158,10 @@
 
             <div class="col-lg-3">
                 <div class="card">
-                    <div class="card-title">JS basic</div>
+                    <div class="card-title"> Fun Number Facts </div>
                     <div class="card-body">
-                        <p>TBD</p>
-                        <p class="small-type">TBD</p>
+                        <button class="btn-block btn-outline-danger" onclick=mathAPI()> Click Here </button>
+                        <p class="card-body text-center" id="moreLearning">Show me something interesting!</p>
                     </div>
                 </div>
             </div>
@@ -295,6 +295,7 @@
             event.preventDefault();
             $("#comp-num").text("?");
             $("#person-num").text("?");
+            $("#show-result").empty().append("Click button and then type a number between 1-9");
             var compNum = compNumGenerate();
             console.log(compNum);
 
@@ -305,9 +306,9 @@
                     $("#person-num").text(userGuess);
                     $("#comp-num").text(compNum);
                     if (userGuess == compNum) {
-                        $("#person-num").append("<p> 'WooHoo! You guessed correctly! Maybe play the lottery...'</p>");
+                        $("#show-result").prepend("<p><strong> 'WooHoo! You guessed correctly! Maybe play the lottery...'</strong></p>");
                     } else {
-                        $("#person-num").append("<p>'Not your lucky day.'</p>");
+                        $("#show-result").prepend("<p><strong>'Not your lucky day.'</strong></p>");
                     }
                 } else {
                     $("#person-num").text("Not a valid choice. Choose a number 1-9.");
@@ -344,6 +345,24 @@
                 $("#country-facts").append(displayDiv, pOne, pTwo, pThree, flag);
             });
         });
+
+        function learningMore(x, y) {
+            var math = document.getElementById('moreLearning');
+            math.innerHTML = (x * y);
+        };
+
+        var mathQueryURL = "http://numbersapi.com/random/trivia";
+
+
+        function mathAPI() {
+            $.ajax({
+                url: mathQueryURL,
+                method: "GET"
+            }).then(function (response) {
+                console.log(response);
+                $("#moreLearning").text(response);
+            })
+        }
 
 
 

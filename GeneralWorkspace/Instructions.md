@@ -33,4 +33,8 @@ Current time is : 10 PM : 30 : 38
 
 8. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched". 
     I think we did this on an early day in class ....
-    Decently happy with the functioning .... WISH  THE FUNCTION WOULD STOP ACCEPTING KEYBOARD INPUT AFTER 1 ACCEPTABLE ENTRY ...
+    Decently happy with the functioning .... WISH THE FUNCTION WOULD STOP ACCEPTING KEYBOARD INPUT AFTER 1 ACCEPTABLE ENTRY ...
+
+RESTCountries API
+    This went quicker than I expected ... really only had a hitch with figuring out how to get to the '0' that is a layer in the return....ends up [] worked beautifully
+    Not much styling work bc I ran out of time, but js function is there!
